@@ -1,6 +1,6 @@
 #Discription:Take a number as input opto  10 and print its word form
 #Author:Hrishikesh M Bodake
-#Since: March 1 2020 /Monday
+#Since: March 2 2020 /Monday
 #!/bin/bash -x
 read -p "Enter your choice: " choice
 case $choice in
