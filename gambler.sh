@@ -14,7 +14,7 @@ do
 	then
 #		echo W
 		numberoftimeswon=$(($numberoftimeswon+1))
-		stake=$(($stake+1))
+		stakes=$(($stakes+1))
 	else
 #		echo L
 		stakes=$(($stakes-1))
