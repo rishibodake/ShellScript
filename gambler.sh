@@ -23,3 +23,4 @@ done
 
 echo Number of times you won: $numberoftimeswon
 echo Total number of bets placed: $betnumber
+echo Current stakes are $stakes
