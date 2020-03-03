@@ -5,13 +5,24 @@
 #!/bin/bash -x
 function farenheitToCelcius(){
 		read -p "Enter the temprature in farenheit: " tempInF
-		tempInC=`expr "scale=2;$tempInF-32*5/9" | bc -l`
-		echo $tempInF Farenheight = $tempInC Celcius
+		if [[ $tempInF -ge 32 && $tempInF -le 212 ]]
+		then
+			tempInC=`expr "scale=2;($tempInF-32)*5/9" | bc -l`
+			echo $tempInF Farenheight = $tempInC Celcius
+		else
+			echo Temprature out of limit
+		fi
 }
 function celciusToFarenheit(){
 		read -p "Enter the temprature in celcius: " tempInC
-		tempInF=`expr "scale=2;$tempInC*9/5+32" | bc -l`
-		echo $tempInC Celcius = $tempInF Farenheit
+		if [[ $tempInC -ge 0 && $tempInC -le 100 ]]
+		then
+			tempInF=`expr "scale=2;($tempInC*9/5)+32" | bc -l`
+			echo $tempInC Celcius = $tempInF Farenheit
+		else
+			echo Temprature is out of limit
+		fi
+
 }
 function chooseConversion(){
 		echo 1 for Farenheit To Celcius
