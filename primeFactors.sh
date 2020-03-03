@@ -2,9 +2,10 @@
 #Author:Hrishikesh M Bodake
 #Since:March 2 2020 /Monday
 #!/bin/bash -x
-
+declare -a arr
+counter=0
 read -p "Enter Number To Find Factors " num
-
+function checkPrimeFactors(){
 for (( index=1; index<=$num; index++ ))
 do
   if [[ $(($num%$index)) -eq 0 ]]
@@ -19,7 +20,10 @@ do
         done
         if [[ $count -eq 2 ]]
         then
-           echo $index
+           arr[counter++]=$index
         fi
      fi
 done
+}
+checkPrimeFactors
+echo ${arr[@]}
